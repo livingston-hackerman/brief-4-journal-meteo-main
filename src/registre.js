@@ -51,6 +51,11 @@ const erreurs = [];
   if (Number.isNaN(pluie) || pluie < 0) {
     erreurs.push("Quantité de pluie invalide");
   }
+  const humidite = versNombre(saisie.humiditeAirPct);
+  if (Number.isNaN(humidite) || humidite < 0 || humidite > 100) {
+    erreurs.push("Humidité invalide");
+  }
+  return erreurs;
 }
 
 // Fabrique le relevé à enregistrer à partir d'une saisie VALIDE : les trois mesures deviennent des nombres.
