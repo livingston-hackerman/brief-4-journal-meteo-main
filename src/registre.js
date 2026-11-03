@@ -43,6 +43,10 @@ const erreurs = [];
   if (!estDateValide(saisie.date)) {
     erreurs.push("Date invalide");
   }
+  const temperature = versNombre(saisie.temperatureC);
+  if (Number.isNaN(temperature)) {
+    erreurs.push("Température invalide");
+  }
 }
 
 // Fabrique le relevé à enregistrer à partir d'une saisie VALIDE : les trois mesures deviennent des nombres.
