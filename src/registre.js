@@ -23,7 +23,8 @@ if (releves.length===0){
 
 // Renvoie le relevé qui a cet identifiant, ou undefined s'il n'existe pas.
 export function trouverParId(releves, id) {
-  throw new Error('TODO : coder trouverParId dans src/registre.js');
+//  throw new Error('TODO : coder trouverParId dans src/registre.js');
+  return releves.find(releves => releves.id === id)
 }
 
 // Contrôle une saisie AVANT de l'ajouter. Tous les champs arrivent sous forme de TEXTE :
