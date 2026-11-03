@@ -4,7 +4,8 @@
 
 ## Contexte
 
-✏️ *En trois à cinq phrases : qui utilise l'outil, quel problème il résout, ce qu'il ne permet pas de conclure.*
+cet outil est utilisé par les exploitants agricoles. il permet de faire le point de l'activité climatique (temperature, pluie,humidité) à des dates précises. 
+cependant, il ne permet pas de determiner l'humidité du sol.
 
 ## Prérequis et lancement
 
