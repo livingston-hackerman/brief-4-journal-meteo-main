@@ -34,16 +34,21 @@ export function trouverParId(releves, id) {
 // (négatif ou décimal accepté) · pluieMm nombre positif ou nul · humiditeAirPct nombre entre 0 et 100.
 // Un message par règle non respectée ; n'ajoutez aucune autre règle. Le journal reçu n'est pas modifié.
 export function verifierReleve(saisie, releves) {
-  throw new Error('TODO : coder verifierReleve dans src/registre.js');
+//  throw new Error('TODO : coder verifierReleve dans src/registre.js');
+const erreurs = [];
+
+  if (!saisie.id || releves.some(r => r.id === saisie.id)) {
+    erreurs.push("Identifiant invalide ou déjà utilisé");
+  }
 }
 
 // Fabrique le relevé à enregistrer à partir d'une saisie VALIDE : les trois mesures deviennent des nombres.
 export function creerReleve(saisie) {
-  throw new Error('TODO : coder creerReleve dans src/registre.js');
+//  throw new Error('TODO : coder creerReleve dans src/registre.js');
 }
 
 // Ajoute la saisie au journal si elle est valide (verifierReleve, puis creerReleve).
 // Renvoie les erreurs : [] si le relevé a été ajouté ; sinon les messages, et rien n'est ajouté.
 export function ajouterReleve(releves, saisie) {
-  throw new Error('TODO : coder ajouterReleve dans src/registre.js');
+//  throw new Error('TODO : coder ajouterReleve dans src/registre.js');
 }
