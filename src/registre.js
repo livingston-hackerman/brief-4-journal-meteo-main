@@ -47,6 +47,10 @@ const erreurs = [];
   if (Number.isNaN(temperature)) {
     erreurs.push("Température invalide");
   }
+  const pluie = versNombre(saisie.pluieMm);
+  if (Number.isNaN(pluie) || pluie < 0) {
+    erreurs.push("Quantité de pluie invalide");
+  }
 }
 
 // Fabrique le relevé à enregistrer à partir d'une saisie VALIDE : les trois mesures deviennent des nombres.
