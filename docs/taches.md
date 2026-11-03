@@ -4,7 +4,7 @@
 
 | Tâche | Prévu | Fait le | Preuve |
 | --- | --- | --- | --- |
-| Poste et dépôt prêts ; besoin compris ; documents commencés | | | |
+| Poste et dépôt prêts ; besoin compris ; documents commencés | 02/11/2026| 02/11/2026| https://github.com/livingston-hackerman/brief-4-journal-meteo-main/commit/162023be0525cd5fb7afb377bffe32ccf28f7197|
 | Fiche 2 : lire et écrire le JSON | | | |
 | Fiche 3 : ajouter et lister ; choix 1 et 2 ; erreurs | | | |
 | Fiche 4 : rechercher et trier ; choix 3 et 4 | | | |
