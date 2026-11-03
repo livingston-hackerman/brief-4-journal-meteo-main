@@ -40,6 +40,9 @@ const erreurs = [];
   if (!saisie.id || releves.some(r => r.id === saisie.id)) {
     erreurs.push("Identifiant invalide ou déjà utilisé");
   }
+  if (!estDateValide(saisie.date)) {
+    erreurs.push("Date invalide");
+  }
 }
 
 // Fabrique le relevé à enregistrer à partir d'une saisie VALIDE : les trois mesures deviennent des nombres.
