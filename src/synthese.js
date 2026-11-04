@@ -18,10 +18,10 @@ const moyenne = somme / releves.length
 // Renvoie le cumul (la somme) des pluies, en mm. Liste vide : 0.
 export function cumulPluie(releves) {
 //  throw new Error('TODO : coder cumulPluie dans src/synthese.js');
-//  return releves.reduce(
-//    (total, releve) => total + releve.pluieMm,
-//    0
-//  );
+  return releves.reduce(
+    (total, releve) => total + releve.pluieMm,
+    0
+  );
 }
 
 
