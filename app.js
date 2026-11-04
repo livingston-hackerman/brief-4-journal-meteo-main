@@ -18,6 +18,17 @@ console.log('==================================================');
 console.log('        JOURNAL MÉTÉOROLOGIQUE DE LA FERME        ');
 console.log('    Suivi agroclimatique de la ferme pédagogique  ');
 console.log('==================================================');
+
+  // lire les données
+let releves = []
+try {
+releves = await chargerJson(FICHIER_DONNEES); // importe les données du fichier donnes.json
+}
+catch(erreur){
+const message = erreur.message
+console.log(`Impossible de lire donnees/releves.json : ${message} Le journal démarre vide.`)
+}
+
   fermerSaisie();
 }
 
