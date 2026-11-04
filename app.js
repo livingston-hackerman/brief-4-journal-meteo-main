@@ -42,9 +42,22 @@ console.log('4. Trier (température, pluie)');
 console.log('5. Synthèse de la série');
 console.log('0. Quitter');
 choix = await demander('Votre choix : ');
+
+switch(choix){
+  case '0':
+    break;
+  case '1':
+    console.log('Ajouter un relevé')
+    break;
+  case '2':
+    console.log('Lister les relevés')
+    break;
+  default :
+    console.log('Choix invalide. Veuillez choisir entre 0 et 5.')
+    break;
+}
 }
 console.log("Au revoir !")
-
 
   fermerSaisie();
 }
