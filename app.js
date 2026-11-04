@@ -27,7 +27,9 @@ try {
 releves = await chargerJson(FICHIER_DONNEES); // importe les données du fichier donnes.json
 }
 catch(erreur){
-console.log(`Impossible de lire donnees/releves.json : Le journal démarre vide.`)
+releves = []
+const message = erreur.message;
+console.log(`Impossible de lire donnees/releves.json : ${message} Le journal démarre vide.`)
 }
   // Demander un nouveau choix
  
@@ -43,8 +45,11 @@ console.log('5. Synthèse de la série');
 console.log('0. Quitter');
 choix = await demander('Votre choix : ');
 
+try {
 switch(choix){
   case '0':
+    break;
+  case null:
     break;
   case '1':
     console.log('Ajouter un relevé')
@@ -55,6 +60,15 @@ switch(choix){
   default :
     console.log('Choix invalide. Veuillez choisir entre 0 et 5.')
     break;
+}
+}
+catch(erreur){
+  if(erreur.message.startsWith('TODO')){
+    console.log(`À compléter : ${erreur.message}`)
+}
+  else{
+    console.log(`Erreur inattendue : ${erreur.message}`)
+}
 }
 }
 console.log("Au revoir !")
