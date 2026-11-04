@@ -12,7 +12,12 @@ const FICHIER_DONNEES = 'donnees/releves.json';
 
 async function main() {
   ouvrirSaisie();
-  console.log("À compléter : écrivez le menu dans app.js (fiches/3-ajouter-lister.md).");
+
+  // Afficher le menu
+console.log('==================================================');
+console.log('        JOURNAL MÉTÉOROLOGIQUE DE LA FERME        ');
+console.log('    Suivi agroclimatique de la ferme pédagogique  ');
+console.log('==================================================');
   fermerSaisie();
 }
 
