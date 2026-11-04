@@ -28,4 +28,5 @@ export function trierParTemperature(releves) {
 // Deux relevés égaux gardent leur ordre d'origine. Le tableau reçu ne doit pas changer d'ordre.
 export function trierParPluie(releves) {
 //  throw new Error('TODO : coder trierParPluie dans src/recherche.js');
+  return [...releves].sort ((a,b) => a.pluieMm - b.pluieMm) 
 }
