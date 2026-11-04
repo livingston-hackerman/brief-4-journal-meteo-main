@@ -29,16 +29,15 @@ export function cumulPluie(releves) {
 // Exemple : { min: 26, max: 30 }
 export function temperatureMinMax(releves) {
 //  throw new Error('TODO : coder temperatureMinMax dans src/synthese.js');
-//  if (releves.length === 0) {
-//    return null;
-//  }
+  if (releves.length === 0) {
+    return null;
+  }
+  const temperatures = releves.map(
+    (releve) => releve.temperatureC
+  );
 
-//  const temperatures = releves.map(
-//    (releve) => releve.temperatureC
-//  );
+  const min = Math.min(...temperatures);
+  const max = Math.max(...temperatures);
 
-//  const min = Math.min(...temperatures);
-//  const max = Math.max(...temperatures);
-
-///  return { min, max };
+  return { min, max };
 }
