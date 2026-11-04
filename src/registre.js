@@ -74,4 +74,11 @@ export function creerReleve(saisie) {
 // Renvoie les erreurs : [] si le relevé a été ajouté ; sinon les messages, et rien n'est ajouté.
 export function ajouterReleve(releves, saisie) {
 //  throw new Error('TODO : coder ajouterReleve dans src/registre.js');
+const erreurs = verifierReleve(saisie, releves)
+if(erreurs.length > 0) {
+  return erreurs
+}
+const nouveauReleve = creerReleve(saisie)
+releves.push(nouveauReleve)
+return[]
 }
