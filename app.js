@@ -14,6 +14,8 @@ async function main() {
   ouvrirSaisie();
 
   // Afficher le menu
+  // puis la question Votre choix :
+
 console.log('==================================================');
 console.log('        JOURNAL MÉTÉOROLOGIQUE DE LA FERME        ');
 console.log('    Suivi agroclimatique de la ferme pédagogique  ');
@@ -25,9 +27,24 @@ try {
 releves = await chargerJson(FICHIER_DONNEES); // importe les données du fichier donnes.json
 }
 catch(erreur){
-const message = erreur.message
-console.log(`Impossible de lire donnees/releves.json : ${message} Le journal démarre vide.`)
+console.log(`Impossible de lire donnees/releves.json : Le journal démarre vide.`)
 }
+  // Demander un nouveau choix
+ 
+
+let choix = '';
+while (choix !== '0' && choix !== null) {
+console.log('--------------------- MENU ---------------------');
+console.log('1. Ajouter un relevé');
+console.log('2. Lister les relevés');
+console.log('3. Rechercher (identifiant, date, journées pluvieuses)');
+console.log('4. Trier (température, pluie)');
+console.log('5. Synthèse de la série');
+console.log('0. Quitter');
+choix = await demander('Votre choix : ');
+}
+console.log("Au revoir !")
+
 
   fermerSaisie();
 }
