@@ -18,10 +18,10 @@ const moyenne = somme / releves.length
 // Renvoie le cumul (la somme) des pluies, en mm. Liste vide : 0.
 export function cumulPluie(releves) {
 //  throw new Error('TODO : coder cumulPluie dans src/synthese.js');
-  return releves.reduce(
-    (total, releve) => total + releve.pluieMm,
-    0
-  );
+//  return releves.reduce(
+//    (total, releve) => total + releve.pluieMm,
+//    0
+//  );
 }
 
 
@@ -29,16 +29,16 @@ export function cumulPluie(releves) {
 // Exemple : { min: 26, max: 30 }
 export function temperatureMinMax(releves) {
 //  throw new Error('TODO : coder temperatureMinMax dans src/synthese.js');
-  if (releves.length === 0) {
-    return null;
-  }
+//  if (releves.length === 0) {
+//    return null;
+//  }
 
-  const temperatures = releves.map(
-    (releve) => releve.temperatureC
-  );
+//  const temperatures = releves.map(
+//    (releve) => releve.temperatureC
+//  );
 
-  const min = Math.min(...temperatures);
-  const max = Math.max(...temperatures);
+//  const min = Math.min(...temperatures);
+//  const max = Math.max(...temperatures);
 
-  return { min, max };
+///  return { min, max };
 }
