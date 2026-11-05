@@ -162,26 +162,24 @@ switch(choix){
       console.log('Choix inconnu : retour au menu.');
       break;
   }
-  break;
-}
-    
-  default :
-    console.log('Choix invalide. Veuillez choisir entre 0 et 5.')
+      break; 
+  }
+
+  default:
+    console.log('Choix invalide. Veuillez choisir entre 0 et 5.');
     break;
-}
+  }
 }
 catch(erreur){
   if(erreur.message.startsWith('TODO')){
     console.log(`À compléter : ${erreur.message}`)
-}
+  }
   else{
     console.log(`Erreur inattendue : ${erreur.message}`)
+  }
 }
-}
-}
-console.log("Au revoir !")
-
-  fermerSaisie();
 }
 
-main();
+console.log('Au revoir !');
+fermerSaisie();
+}
