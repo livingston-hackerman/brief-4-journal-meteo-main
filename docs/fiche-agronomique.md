@@ -19,4 +19,4 @@ l'humidité de l'aire en (%):
 
 **Une limite pour l'interprétation climatique** (dix jours contre une trentaine d'années pour un climat ; ce que le seuil de 10 mm ne prévoit pas ; l'humidité de l'air n'est pas celle du sol) :  il ne prévoit ni inondation ni stress hydrique
 
-Sources : donne-test.json; sujet.md · Relu par le coach le : ✏️
+Sources : donne-test.json; sujet.md · Relu par le coach le : 
