@@ -10,7 +10,7 @@ la temperature : C'est le degré de chaleur ou de froid de l'air dans un environ
 
 la pluie en (mm): représente la quantité d'eau qui tombe sur une surface pendant une période donnée. Elle se mesure en millimètres (mm). 1mm de pluie correspond à 1 litre d'eau tombésur 1m².
 
-l'humidité de l'aire en (%): 
+l'humidité de l'aire en (%): L'humidité relative de l'air représente la quantité de vapeur d'eau présente dans l'air par rapport à la quantité maximale que cet air peut contenir à la même température. Elle s'exprime en pourcentage (%)
 
 
 > Du 2026-10-24 au 2026-10-15, la température relevée varie de 26 à 30°C, avec une moyenne de 28°C. Il est tombé 45 mm de pluie ; 8 journées ont reçu au moins 10 mm. L'humidité relative de l'air varie de 70% à 82%.
