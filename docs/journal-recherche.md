@@ -4,6 +4,6 @@
 
 | Ce que je cherchais | Où | Ce que j'ai compris | Utilisé dans |
 | --- | --- | --- | --- |
-| ✏️ | | | |
-| ✏️ | | | |
-| ✏️ | | | |
+| definition de: temperature, pluie, humidité de l'air  | https://meteofrance.com/meteo-a-z/quest-ce-que-la-temperature| la temperature : C'est le degré de chaleur ou de froid de l'air dans un environnement donné. Elle se mesure en degrés Celsius (°C). la pluie en (mm): représente la quantité d'eau qui tombe sur une surface pendant une période donnée. Elle se mesure en millimètres (mm). 1mm de pluie correspond à 1 litre d'eau tombésur 1m². l'humidité de l'aire en (%): L'humidité relative de l'air représente la quantité de vapeur d'eau présente dans l'air par rapport à la quantité maximale que cet air peut contenir à la même température. Elle s'exprime en pourcentage (%)| fiche-agronomique.md|
+| revision des cours JavsaScript | https://fr.w3docs.com/learn-javascript/javascript-objects| fonction, objet, JSON, switch, arrays, asychromes, math, comparateurs | stockage.js, app.js, registre.js, rechercher.js, synthèse.js, bonus.js|
+| comprehension des ennoncés et explications approfondis | claude.ia| L'explication des fichiers et de l'architecture du projet, L'explication de app.js, bloc par bloc, Les principales notions JavaScript utilisées, Des exemples pour modifier les fonctionnalités ou en ajouter, Les résultats attendus selon différents scénarios, Les erreurs rencontrées et leurs corrections, Les commandes pour lancer le programme et exécuter les tests.| stockage.js, app.js, registre.js, rechercher.js, synthèse.js, bonus.js|
