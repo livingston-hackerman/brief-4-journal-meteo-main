@@ -52,10 +52,40 @@ switch(choix){
   case null:
     break;
   case '1':
-    console.log('Ajouter un relevé')
+    let id = await demander('Id(ex:M01): ')
+    const date = await demander('Date(AAAA-MM-JJ): ')
+    const temperatureC = await demander('Temperature(°C): ')
+    const pluieMm = await demander('Pluie(mm): ')
+    const humiditeAirPct = await demander(`Humidite de l'Air(%): `)
+    if(id === null || date === null || temperatureC === null || pluieMm === null || humiditeAirPct === null){
+    console.log('saisie abandonnée')
+    break;
+    }
+    id = id.toUpperCase();
+    const saisie = {      // declarer un objet javascript
+    id,
+    date,
+    temperatureC,
+    pluieMm,
+    humiditeAirPct
+    }  
+    const erreurs = ajouterReleve(releves, saisie);
+    if(erreurs.length>0){
+      console.log(`relevé refusé :`)
+      for(const erreur of erreurs){
+      console.log(`  - ${erreur}`)
+    }
+    } 
+    else if(erreurs.length===0){
+      console.log(`relevé accepté :`)
+      await enregistrerJson(FICHIER_DONNEES, releves);
+      console.log(`Relevé ${saisie.id} ajouté. Le journal compte ${releves.length} relevé(s)`)
+    }       
     break;
   case '2':
-    console.log('Lister les relevés')
+    console.log(`---lister des Relevés (${releves.length})---`)
+    console.log(`----------------------------------------------`)
+    console.log(listerReleves(releves))
     break;
   default :
     console.log('Choix invalide. Veuillez choisir entre 0 et 5.')
