@@ -7,6 +7,7 @@ import { chargerJson, enregistrerJson } from './src/stockage.js';
 import { ajouterReleve, formaterReleve, listerReleves, trouverParId } from './src/registre.js';
 import { SEUIL_JOUR_PLUVIEUX, joursPluvieux, trierParPluie, trierParTemperature, trouverParDate } from './src/recherche.js';
 import { cumulPluie, moyenneTemperature, temperatureMinMax } from './src/synthese.js';
+import { supprimerReleve, modifierReleve, trierParTemperatureDecroissante, journeeLaPlusChaude } from './src/bonus.js';
 
 const FICHIER_DONNEES = 'donnees/releves.json';
 
@@ -42,6 +43,8 @@ console.log('2. Lister les relevés');
 console.log('3. Rechercher (identifiant, date, journées pluvieuses)');
 console.log('4. Trier (température, pluie)');
 console.log('5. Synthèse de la série');
+console.log('6. Supprimer un relevé');
+console.log('7. Modifier un relevé');
 console.log('0. Quitter');
 choix = await demander('Votre choix : ');
 
@@ -121,6 +124,7 @@ switch(choix){
     console.log('saisie abandonnée')
     break;
     }
+    
   const resultat = trouverParDate(releves, sousDate) 
   if(resultat){
     console.log(formaterReleve(resultat))
@@ -146,6 +150,7 @@ switch(choix){
   console.log('--- Trier ---');
   console.log('1. Par température croissante');
   console.log('2. Par pluie croissante');
+  console.log('3. Par température décroissante');
 
   const sousChoix = await demander('Votre choix : ');
 
@@ -158,28 +163,127 @@ switch(choix){
     case '2':
       console.log(listerReleves(trierParPluie(releves)));
       break;
+    case '3':
+      console.log(listerReleves(trierParTemperatureDecroissante(releves)));
+      break;
     default:
       console.log('Choix inconnu : retour au menu.');
       break;
   }
       break; 
   }
+case '5': {
+  console.log('--- Synthèse de la série ---');
+  console.log(`Nombre de relevés : ${releves.length}`);
+
+  const moyenne = moyenneTemperature(releves);
+  const temperatures = temperatureMinMax(releves);
+  const pluie = cumulPluie(releves);
+  const nombrePluvieux = joursPluvieux(
+    releves,
+    SEUIL_JOUR_PLUVIEUX
+  ).length;
+
+  if (moyenne === null) {
+    console.log('Température moyenne : aucune donnée');
+  } else {
+    console.log(`Température moyenne : ${moyenne} °C`);
+  }
+
+  if (temperatures === null) {
+  console.log('Températures minimale et maximale : aucune donnée');
+   } else {
+  console.log(
+    `Température minimale : ${temperatures.min} °C · maximale : ${temperatures.max} °C`
+  );
+  }
+
+const plusChaude = journeeLaPlusChaude(releves);
+
+  if (plusChaude === null) {
+  console.log('Journée la plus chaude : aucune donnée');
+  } 
+  
+  else {
+  console.log(`Journée la plus chaude : ${formaterReleve(plusChaude)}`);
+  }
+
+  console.log(`Cumul de pluie : ${pluie} mm`);
+  console.log(
+    `Journées avec au moins ${SEUIL_JOUR_PLUVIEUX} mm de pluie : ${nombrePluvieux}`
+  );
+
+  console.log('Rappels :');
+  console.log(`  - Quelques jours de relevés forment une courte série météo : ils ne décrivent pas le climat de la région.`);
+  console.log(`  - Le seuil de 10 mm est une catégorie d'exercice : il ne prévoit ni inondation ni stress hydrique.`);
+  console.log(`  - L'humidité relative de l'air (en %) n'est pas l'humidité du sol.`);
+
+  break;
+}
+case '6': {
+  const reponse = await demander('Identifiant : ');
+
+  if (reponse === null) break;
+
+  const id = reponse.toUpperCase();
+  const retire = supprimerReleve(releves, id);
+
+  if (retire === undefined) {
+    console.log(`Relevé ${id} introuvable.`);
+  } else {
+    await enregistrerJson(FICHIER_DONNEES, releves);
+    console.log(
+      `Relevé ${id} supprimé. Le journal compte ${releves.length} relevé(s).`
+    );
+  }
+  break;
+  }
+
+  case '7': {
+  const reponseId = await demander('Identifiant : ');
+  if (reponseId === null) break;
+
+  const id = reponseId.toUpperCase();
+
+  const champ = await demander(
+    'Champ à modifier (date, temperatureC, pluieMm, humiditeAirPct) : '
+  );
+  if (champ === null) break;
+
+  const valeur = await demander('Nouvelle valeur : ');
+  if (valeur === null) break;
+
+  const erreurs = modifierReleve(releves, id, champ, valeur);
+
+  if (erreurs.length === 0) {
+    await enregistrerJson(FICHIER_DONNEES, releves);
+    console.log(`Relevé ${id} modifié.`);
+  } else {
+    console.log('Modification refusée :');
+
+    for (const erreur of erreurs) {
+      console.log(`  - ${erreur}`);
+    }
+  }
+    break;
+  }
 
   default:
-    console.log('Choix invalide. Veuillez choisir entre 0 et 5.');
+    console.log('Choix invalide. Veuillez choisir entre 0 et 7.');
     break;
   }
 }
 catch(erreur){
   if(erreur.message.startsWith('TODO')){
     console.log(`À compléter : ${erreur.message}`)
-  }
+}
   else{
     console.log(`Erreur inattendue : ${erreur.message}`)
-  }
 }
+}
+}
+  console.log("Au revoir !")
+  fermerSaisie();
 }
 
-console.log('Au revoir !');
-fermerSaisie();
-}
+main();
