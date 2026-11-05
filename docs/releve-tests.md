@@ -17,7 +17,7 @@
 | Id(ex:M01):, Date(AAAA-MM-JJ):, Temperature(°C):, Pluie(mm):, Humidite de l'Air(%):, | relevé refusé :| invalide, Identifiant invalide ou déjà utilisé  Date invalide Température invalide   Quantité de pluie invalide, Humidité invalide| ANOH Levi emmanuel appia|
 | Id(ex:M01): m11,  Date(AAAA-MM-JJ): ,  Temperature(°C): -2,  Pluie(mm):, Humidite de l'Air(%): 100     | relevé refusé :| invalide, Date invalide,  Quantité de pluie invalide - relevé pas enregistré| ANOH levi emmanuel appia|
 | Votre choix : 1, Id(ex:M01): m11, Date(AAAA-MM-JJ): 2026-10-25, Temperature(°C): 27,5, Pluie(mm): 10 , Humidite de l'Air(%): 79 | relevé accepté | Relevé M11 ajouté. Le journal compte 11 relevé(s)| ANOH Levi emmanuel appia|
-| ✏️ | | | |
+| Identifiant : m11 | supprimé| Relevé M11 supprimé. Le journal compte 10 relevé(s).| ANOH Levi emmanuel appia|
 | ✏️ | | | |
 | ✏️ | | | |
 
