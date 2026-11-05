@@ -24,14 +24,14 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ✏️ *Cochez seulement ce qui marche : `- [x]`.*
 
-- [ ] Données lues et enregistrées dans `donnees/releves.json`
-- [ ] Ajouter un relevé, saisies invalides refusées sans arrêter le programme
-- [ ] Lister les relevés, message si le journal est vide
-- [ ] Rechercher par identifiant ou par date ; journées pluvieuses (au moins 10 mm)
-- [ ] Trier par température ou par pluie
-- [ ] Synthèse : température moyenne, minimale et maximale de la série, cumul de pluie, journées pluvieuses
-- [ ] Bonus : supprimer et modifier un relevé (choix 6 et 7)
-- [ ] Bonus : tri par température décroissante, journée la plus chaude
+- [x] Données lues et enregistrées dans `donnees/releves.json`
+- [x] Ajouter un relevé, saisies invalides refusées sans arrêter le programme
+- [x] Lister les relevés, message si le journal est vide
+- [x] Rechercher par identifiant ou par date ; journées pluvieuses (au moins 10 mm)
+- [x] Trier par température ou par pluie
+- [x] Synthèse : température moyenne, minimale et maximale de la série, cumul de pluie, journées pluvieuses
+- [x] Bonus : supprimer et modifier un relevé (choix 6 et 7)
+- [x] Bonus : tri par température décroissante, journée la plus chaude
 
 ## Données
 
@@ -40,6 +40,9 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 ## Limites
 
 ✏️ *Au moins trois. Par exemple : dix jours de relevés forment une courte série, ils ne décrivent pas le climat de la région.*
+- ne permettent pas de determiner l'humidité du sol
+- ne permmettent pas de determiner le climat à un moment précis de la journée (heures, minute)
+- permettent pas de determiner si la plante est suffisament hydraté
 
 ## Documents
 
@@ -47,4 +50,11 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ## Auteur
 
-✏️ *Prénom NOM, compte GitHub. Entraide : avec qui, sur quoi.*
+ANHO Levi emmanuel Appia, livingston-hackerman . 
+
+Entraide : 
+OUEDRAOGO BOURAHIMA : app.js
+FAKAYODE ABDUL : registre.js / synthes.js / bonus.js
+Falle sereko jaures : rechercher.js
+Thyedie Akpli : docs
+Koné Pagadjoufougou Abdoulaye : docs / app.js
