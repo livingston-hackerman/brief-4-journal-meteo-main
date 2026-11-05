@@ -51,7 +51,7 @@ switch(choix){
     break;
   case null:
     break;
-  case '1':
+  case '1':{
     let id = await demander('Id(ex:M01): ')
     const date = await demander('Date(AAAA-MM-JJ): ')
     const temperatureC = await demander('Temperature(°C): ')
@@ -82,11 +82,89 @@ switch(choix){
       console.log(`Relevé ${saisie.id} ajouté. Le journal compte ${releves.length} relevé(s)`)
     }       
     break;
+    }
   case '2':
     console.log(`---lister des Relevés (${releves.length})---`)
     console.log(`----------------------------------------------`)
     console.log(listerReleves(releves))
     break;
+  case '3':{
+    console.log(`---Rechercher---`);
+    console.log(`1. Par identifiant`);
+    console.log(`2. Par date`);
+    console.log(`3. les journées pluvieuses (au moins ${SEUIL_JOUR_PLUVIEUX} mm)`);
+    const sousChoix = await demander('votre choix: ');
+  switch(sousChoix){
+  case '0':
+    break;
+  case null:
+    break;
+   case '1':{ 
+    let sousId = await demander('Identifiant: ')
+    if(sousId === null){
+    console.log('saisie abandonnée')
+    break;
+    }
+  const idRecherche = sousId.toUpperCase();
+  const resultat = trouverParId(releves, idRecherche) 
+  if(resultat){
+    console.log(formaterReleve(resultat))
+    }
+  else{
+    console.log(`Relevé ${idRecherche} introuvable.`)
+  }
+  }
+    break;
+   case '2':{ 
+    let sousDate = await demander('Date (AAAA-MM-JJ): ')
+    if(sousDate === null){
+    console.log('saisie abandonnée')
+    break;
+    }
+  const resultat = trouverParDate(releves, sousDate) 
+  if(resultat){
+    console.log(formaterReleve(resultat))
+    }
+  else{
+    console.log(`Relevé du ${sousDate} introuvable`)
+  }
+  }
+    break;
+   case '3':{  
+    const resultats = joursPluvieux(releves, SEUIL_JOUR_PLUVIEUX) 
+    console.log(`${resultats.length} journées avec au moins ${SEUIL_JOUR_PLUVIEUX} mm de pluie`)             
+    console.log(listerReleves(resultats))
+    break;
+    }
+   default:
+    console.log(`choix inconnu : retour au menu.`);
+    break;
+  }
+    break;
+  }
+  case '4': {
+  console.log('--- Trier ---');
+  console.log('1. Par température croissante');
+  console.log('2. Par pluie croissante');
+
+  const sousChoix = await demander('Votre choix : ');
+
+  switch (sousChoix) {
+    case null:
+      break;
+    case '1':
+      console.log(listerReleves(trierParTemperature(releves)));
+      break;
+    case '2':
+      console.log(listerReleves(trierParPluie(releves)));
+      break;
+    default:
+      console.log('Choix inconnu : retour au menu.');
+      break;
+  }
+  break;
+}
+    
   default :
     console.log('Choix invalide. Veuillez choisir entre 0 et 5.')
     break;
