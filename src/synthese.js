@@ -6,10 +6,12 @@
 // Exemples : 28 avec les données de départ · 27.7 pour 27, 26 et 30 °C (83 / 3 = 27.666…)
 export function moyenneTemperature(releves) {
 //  throw new Error('TODO : coder moyenneTemperature dans src/synthese.js');
-const somme = releves.reduce((total, releve) => total + releve.temperatureC, 0) 
+
 if(releves.length === 0){
   return null
 }
+const somme = releves.reduce((total, releve) => total + releve.temperatureC, 0) 
+
 const moyenne = somme / releves.length
   return Math.round(moyenne*10)/10
 }

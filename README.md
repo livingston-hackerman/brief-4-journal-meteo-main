@@ -22,8 +22,6 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ## Fonctionnalités
 
-✏️ *Cochez seulement ce qui marche : `- [x]`.*
-
 - [x] Données lues et enregistrées dans `donnees/releves.json`
 - [x] Ajouter un relevé, saisies invalides refusées sans arrêter le programme
 - [x] Lister les relevés, message si le journal est vide
@@ -39,7 +37,6 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ## Limites
 
-✏️ *Au moins trois. Par exemple : dix jours de relevés forment une courte série, ils ne décrivent pas le climat de la région.*
 - ne permettent pas de determiner l'humidité du sol
 - ne permmettent pas de determiner le climat à un moment précis de la journée (heures, minute)
 - permettent pas de determiner si la plante est suffisament hydraté

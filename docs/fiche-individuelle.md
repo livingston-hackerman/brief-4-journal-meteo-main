@@ -11,8 +11,8 @@ ANOH Levi Emmanuel Appia , livingston-hackerman
    erreurs de syntaxes
    
    solutions:
-   claude pour analyse et consignes de resolution
-   travail d'équipe 
+   claude analyse et repère les erreurs, donne des direction de resolution sans donner la réponse
+   travailler en équipe 
 
 3. **L'entraide** (qui m'a aidé, qui j'ai aidé, sur quoi) : 
 qui m'a aidé 
